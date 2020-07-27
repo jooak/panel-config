@@ -1,0 +1,83 @@
+.section
+{
+  margin-bottom: 4rem;
+
+  & > *
+  {
+      margin-bottom: 2.8rem;
+  }
+}
+
+.checkboxes
+{
+  & > *
+  {
+    margin-bottom: 1.6rem;
+
+    &:last-child
+    {
+      margin: 0;
+    }
+  }
+}
+
+.choicegroup
+{
+  & .ms-ChoiceField
+  {
+      margin: 0;
+      margin-bottom: 1.6rem;
+  }
+}
+
+.detailslist
+{
+    & .ms-DetailsHeader
+    {
+        padding: 0;
+    }
+}
+
+.panelHeaderWrapper
+{
+    margin-bottom: 2.4rem;
+}
+
+// h1.panelheader
+// {
+//   margin-bottom: 2.4rem;
+// }
+
+h2.subhead
+{
+    margin-bottom: 0.4rem;
+}
+
+.label
+{
+  margin: 0;
+}
+
+.labelforlists
+{
+  margin-bottom: 1.1rem; // to compensate for 5px padding
+}
+
+.links
+{
+    & > *
+    {
+        margin-bottom: 0.4rem;
+
+        &:last-child
+        {
+            margin: 0;
+        }
+    }
+}
+
+.pivots
+{
+  margin-bottom: 3rem;
+  margin-left: -0.8rem;
+}

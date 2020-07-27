@@ -1,13 +1,161 @@
-body {
+*
+{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html
+{
+  font-size: 10px;
+}
+
+body
+{
+  font-family: 'Segoe UI', 'Helvetica', 'Arial', sans-serif;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.wrapper
+{
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+.layerPanel
+{
+  z-index: 100;
+  flex-shrink: 0;
+  width: 32rem;
+  padding: 2.4rem;
+  box-shadow:
+    0 0 0.4rem rgba(0, 0, 0, 0.12),
+    0 0 3.2rem rgba(0, 0, 0, 0.12);
+}
+
+/* remove this */
+.layerPanel > *
+{
+  margin-bottom: 1.6rem;
+}
+
+#layerPanelTextArea
+{
+  width: 100%;
+  /* padding: 1.2rem;
+  border-radius: 0;
+  border: none;
+  background-color: #F2F2F2; */
+  resize: none;
+  /* font-family: monospace;
+  font-size: 1.6rem;
+  line-height: 2.4rem; */
+}
+
+/* #layerPanelTextArea:focus
+{
+  outline: none;
+} */
+
+.artboard
+{
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #DDDDDD;
+  overflow: hidden;
+}
+
+.panelWrapper
+{
+  display: flex;
+  flex-direction: column;
+  width: 48rem;
+  height: 88rem;
+  box-shadow:
+    0 0.2rem 0.4rem rgba(0, 0, 0, 0.12),
+    0 1.6rem 3.2rem rgba(0, 0, 0, 0.12);
+  background-color: #FFFFFF;
+}
+
+.panelContent
+{
+  position: relative;
+  flex-grow: 1;
+  padding: 4rem 2.4rem;
+}
+
+/* remove this */
+.panelContent > *
+{
+  margin-bottom: 1.6rem;
+}
+
+.panelActions
+{
+  display: flex;
+  align-items: center;
+  height: 6.4rem;
+  padding: 0 2.4rem;
+  border-top: 0.1rem solid #DDDDDD;
+}
+
+.buttonWrapper
+{
+  margin: 0 -0.4rem;
+}
+
+.buttonWrapper > *
+{
+  margin: 0 0.4rem;
+}
+
+/* button
+{
+  margin: 0 0.4rem;
+  padding: 0.4rem 1.2rem;
+  border-radius: 0.2rem;
+  border: none;
+  outline: none;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  cursor: pointer;
+  background: none;
+}
+
+button.accent
+{
+  color: #FFFFFF;
+  background-color: blue;
+}
+
+button.neutral
+{
+  color: #000000;
+  background-color: #CCCCCC;
+}
+
+button.icon
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.2rem;
+  height: 3.2rem;
+  margin: 0;
+  color: #000000;
+} */
+
+#panelClose
+{
+  position: absolute;
+  top: 0.8rem;
+  right: 0.8rem;
+  margin: 0;
+  color: #000000;
 }
