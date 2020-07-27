@@ -74,61 +74,33 @@ class App extends React.Component
         return testArr;
     }
     
-    // headerHasIcon(e) // temp
-    // {   
-    //     let testBool = e.target.getAttribute('aria-checked');
+    headerHasIcon(e) // work around
+    {   
+        let testBool = e.target.getAttribute('aria-checked');
 
-    //     if (testBool === 'false')
-    //     {
-    //         this.setState({
-    //             headerItems:
-    //                 <div className="panelHeaderWrapper">
-    //                     <Icon iconName="SkypeCircleCheck" className="panelHeaderIcon" />
-    //                     <h1 className="panelHeader">Panel header</h1>
-    //                 </div>
-    //         });
-    //     }
-    //     else
-    //     {
-    //         this.setState({
-    //             headerItems:
-    //                 <div className="panelHeaderWrapper">
-    //                     <h1 className="panelHeader">Panel header</h1>
-    //                 </div>
-    //         });
-    //     }
-    // }
+        if (testBool === 'false')
+        {
+            this.setState({
+                headerItems:
+                    <div className="panelHeaderWrapper">
+                        <Icon iconName="SkypeCircleCheck" className="panelHeaderIcon" />
+                        <h1 className="panelHeader">Panel header</h1>
+                    </div>
+            });
+        }
+        else
+        {
+            this.setState({
+                headerItems:
+                    <div className="panelHeaderWrapper">
+                        <h1 className="panelHeader">Panel header</h1>
+                    </div>
+            });
+        }
+    }
 
     render()
     {
-        const onChange = function(
-            ev: React.ChangeEvent<HTMLElement>,
-            isChecked: boolean
-            )
-        {
-            console.log('hello world!');
-
-            if ({isChecked}.isChecked === true)
-            {
-                // this.setState({
-                //     headerItems:
-                //         <div className="panelHeaderWrapper">
-                //             <Icon iconName="SkypeCircleCheck" className="panelHeaderIcon" />
-                //             <h1 className="panelHeader">Panel header</h1>
-                //         </div>
-                // })
-            }
-            else
-            {
-                // this.setState({
-                //     headerItems:
-                //         <div className="panelHeaderWrapper">
-                //             <h1 className="panelHeader">Panel header</h1>
-                //         </div>
-                // });
-            }
-        }
-
         return (
             <div className="wrapper">
                 <div className="layerPanel">
@@ -137,8 +109,7 @@ class App extends React.Component
                     <div className="panelHeaderControls">
                         <Checkbox 
                             label="Header has icon?"
-                            // onChange={(e) => this.headerHasIcon(e)}
-                            onChange={onChange}
+                            onChange={(e) => this.headerHasIcon(e)}
                         />
                     </div>
                     {this.addTextFields()}
@@ -148,20 +119,20 @@ class App extends React.Component
                             text="Update"
                             allowDisabledFocus
                             className="accent"
-                            onClick={(e) => {
-                                this.readLayers()
-                            }}
+                            onClick={(e) => this.readLayers()}
                         />
                         <DefaultButton
                             text="Add section"
-                            onClick={(e) => {
-                                this.setState({textAreaNum: this.state.textAreaNum + 1})
-                            }}
+                            onClick={(e) => this.setState({textAreaNum: this.state.textAreaNum + 1})}
                         />
                         <DefaultButton
                             text="Remove section"
-                            onClick={(e) => {
-                                if (this.state.textAreaNum > 1) { this.setState({textAreaNum: this.state.textAreaNum - 1}) }
+                            onClick={(e) =>
+                            {
+                                if (this.state.textAreaNum > 1)
+                                {
+                                    this.setState({textAreaNum: this.state.textAreaNum - 1})
+                                }
                             }}
                         />
                     </div>
